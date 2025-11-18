@@ -122,10 +122,22 @@
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LandSearchPage.xaml.cs">
+      <DependentUpon>LandSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TransferPage.xaml.cs">
+      <DependentUpon>TransferPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Verifying.xaml.cs">
       <DependentUpon>Verifying.xaml</DependentUpon>
     </Compile>
@@ -137,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\landnew.jpeg" />
+    <Content Include="Assets\landunsplash.jpg" />
     <Content Include="Assets\lawyer.jpeg" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -150,9 +163,25 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LandSearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SignUpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransferPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Verifying.xaml">
       <SubType>Designer</SubType>

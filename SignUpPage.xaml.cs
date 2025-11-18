@@ -20,26 +20,11 @@ namespace LandSecure
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class HomePage : Page
+    public sealed partial class SignUpPage : Page
     {
-        public HomePage()
+        public SignUpPage()
         {
             this.InitializeComponent();
-        }
-
-        private void verifybtn(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(Verifying));
-        }
-
-        private void SearchLandBtn(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(LandSearchPage));
-        }
-
-        private void TransferLandBtn(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(TransferPage));
         }
     }
 }

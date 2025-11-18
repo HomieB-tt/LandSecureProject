@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="LandSecure.Verifying"
+    x:Class="LandSecure.TransferPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,7 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
-
     <ScrollViewer>
         <Grid Padding="40">
 
@@ -23,7 +22,7 @@
                 Margin="0,0,0,20"
                 FontSize="32"
                 FontWeight="Bold"
-                Text="Document Verification" />
+                Text="Transfer of Title" />
 
             <!--  Progress Bar  -->
             <StackPanel Grid.Row="1" Margin="0,0,0,30">
@@ -31,12 +30,12 @@
                     x:Name="StepIndicator"
                     Margin="0,0,0,10"
                     FontSize="16"
-                    Text="Step 1 of 3: Property Details" />
+                    Text="Step 1 of 4: Property Details" />
                 <ProgressBar
                     x:Name="ProgressBar"
                     Height="10"
                     Maximum="100"
-                    Value="33" />
+                    Value="25" />
             </StackPanel>
 
             <Grid Grid.Row="2">
@@ -116,8 +115,48 @@
                         Text="{Binding Email, Mode=TwoWay}" />
                 </StackPanel>
 
-                <!--  Step 3: Document Upload  -->
+
+
+                <!--  new owner details  -->
                 <StackPanel x:Name="Step3Panel" Visibility="Collapsed">
+                    <TextBlock
+                        Margin="0,0,0,20"
+                        FontSize="24"
+                        FontWeight="Bold"
+                        Text="New Owner Information" />
+
+                    <TextBox
+                        x:Name="NewOwnerNameBox"
+                        Margin="0,0,0,15"
+                        Header="Owner Name*"
+                        PlaceholderText="Full legal name"
+                        Text="{Binding OwnerName, Mode=TwoWay}" />
+
+                    <TextBox
+                        x:Name="Newidentification"
+                        Margin="0,0,0,15"
+                        Header="National ID*"
+                        PlaceholderText="Enter ID number"
+                        Text="{Binding NationalId, Mode=TwoWay}" />
+
+                    <TextBox
+                        x:Name="contact"
+                        Margin="0,0,0,15"
+                        Header="Phone Number*"
+                        PlaceholderText="+256 XXX XXX XXX"
+                        Text="{Binding Contact, Mode=TwoWay}" />
+
+                    <TextBox
+                        x:Name="email"
+                        Margin="0,0,0,15"
+                        Header="Email"
+                        PlaceholderText="owner@example.com"
+                        Text="{Binding Email, Mode=TwoWay}" />
+                </StackPanel>
+
+
+                <!--  Step 3: Document Upload  -->
+                <StackPanel x:Name="Step4Panel" Visibility="Collapsed">
                     <TextBlock
                         Margin="0,0,0,20"
                         FontSize="24"
@@ -172,7 +211,8 @@
                 <Button
                     x:Name="NextBtn"
                     Width="100"
-                    Content="Next" Click="nextbtn" />
+                    Click="nextbtn"
+                    Content="Next" />
             </StackPanel>
 
         </Grid>

@@ -19,8 +19,7 @@ using Windows.UI.Xaml.Navigation;
 
 namespace LandSecure
 {
-   
-    public class VerificationForm
+    public class TransferForm
     {
         public int Id { get; set; }
         public string PropertyId { get; set; }
@@ -38,18 +37,17 @@ namespace LandSecure
         public string Status { get; set; }
 
     }
-
-    public sealed partial class Verifying : Page
+    public sealed partial class TransferPage : Page
     {
-
         private int currentStep = 1;
 
-        private VerificationForm formData;
-        public Verifying()
+        private TransferForm formData;
+
+        public TransferPage()
         {
-            this.InitializeComponent(); 
-            
-            formData = new VerificationForm
+            this.InitializeComponent();
+
+            formData = new TransferForm
             {
                 CreatedDate = DateTime.Now,
                 Status = "Pending"
@@ -57,7 +55,10 @@ namespace LandSecure
 
             // Set DataContext for binding
             this.DataContext = formData;
+
+
         }
+
 
         private void nextbtn(object sender, RoutedEventArgs e)
         {
@@ -67,7 +68,7 @@ namespace LandSecure
                 return;
             }
 
-            if (currentStep < 3)
+            if (currentStep < 4)
             {
                 currentStep++;
                 UpdateStepVisibility();
@@ -94,27 +95,36 @@ namespace LandSecure
             Step1Panel.Visibility = Visibility.Collapsed;
             Step2Panel.Visibility = Visibility.Collapsed;
             Step3Panel.Visibility = Visibility.Collapsed;
+            Step4Panel.Visibility = Visibility.Collapsed;
 
             // Show current step
             switch (currentStep)
             {
                 case 1:
                     Step1Panel.Visibility = Visibility.Visible;
-                    StepIndicator.Text = "Step 1 of 3: Property Details";
-                    ProgressBar.Value = 33;
+                    StepIndicator.Text = "Step 1 of 4: Property Details";
+                    ProgressBar.Value = 25;
                     BackBtn.Visibility = Visibility.Collapsed;
                     NextBtn.Content = "Next";
                     break;
                 case 2:
                     Step2Panel.Visibility = Visibility.Visible;
-                    StepIndicator.Text = "Step 2 of 3: Owner Information";
-                    ProgressBar.Value = 66;
+                    StepIndicator.Text = "Step 2 of 4: Owner Information";
+                    ProgressBar.Value = 50;
                     BackBtn.Visibility = Visibility.Visible;
                     NextBtn.Content = "Next";
                     break;
                 case 3:
                     Step3Panel.Visibility = Visibility.Visible;
-                    StepIndicator.Text = "Step 3 of 3: Upload Documents";
+                    StepIndicator.Text = "Step 3 of 4: Upload Documents";
+                    ProgressBar.Value = 75;
+                    BackBtn.Visibility = Visibility.Visible;
+                    NextBtn.Content = "Submit";
+                    break;
+
+            case 4:
+                    Step4Panel.Visibility = Visibility.Visible;
+                    StepIndicator.Text = "Step 4 of 4: Review & Submit";
                     ProgressBar.Value = 100;
                     BackBtn.Visibility = Visibility.Visible;
                     NextBtn.Content = "Submit";
@@ -212,7 +222,7 @@ namespace LandSecure
                 ContentDialog successDialog = new ContentDialog
                 {
                     Title = "Success!",
-                    Content = $"Verification request submitted successfully!\n\nProperty ID: {formData.PropertyId}\nOwner: {formData.OwnerName}\n\nYou will receive updates via {formData.Contact}",
+                    Content = $"Transfer request submitted successfully!\n\nProperty ID: {formData.PropertyId}\nOwner: {formData.OwnerName}\n\nYou will receive updates via {formData.Contact}",
                     CloseButtonText = "OK"
                 };
                 await successDialog.ShowAsync();

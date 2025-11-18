@@ -8,7 +8,77 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <Style x:Key="nav" TargetType="NavigationView">
+            <Setter Property="Margin" Value="10,0,0,0"/>
+        </Style>
+    </Page.Resources>
+    
+
     <Grid>
 
+        <NavigationView x:Name="NavView"
+                    IsBackButtonVisible="Collapsed"
+                    ItemInvoked="NavView_ItemInvoked"
+                    Background="Transparent"
+                        >
+
+            <NavigationView.MenuItems
+                >
+
+                <StackPanel 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Padding="10"
+                    Margin="20, 0 ,0 ,0"
+                    Width="200"
+                    Height="50"
+                    >
+                    <SymbolIcon Symbol="OtherUser"/>
+                    <TextBlock Text="Welcome User"
+                               FontSize="20"
+                               Height="30"
+                               Margin="3,0,0,0"
+                               />
+                </StackPanel>
+
+               
+                <NavigationViewItem Content="Home" Tag="HomePage" IsSelected="True"
+                                    >
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Home" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Verify Documents" Tag="VerifyPage">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Accept" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Search Land" Tag="SearchLandPage">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Find" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Transfer Titles" Tag="TransferLandPage">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Switch" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <!-- Move the "Lawyers" item here, since FooterMenuItems is not supported in WinUI/UWP XAML -->
+                <NavigationViewItem Content="Lawyers" Tag="LawyersPage">
+                    <NavigationViewItem.Icon>
+                        <SymbolIcon Symbol="Contact" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+
+            <Frame x:Name="ContentFrame" />
+
+        </NavigationView>
     </Grid>
 </Page>

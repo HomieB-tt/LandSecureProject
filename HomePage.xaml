@@ -11,7 +11,7 @@
     <Page.Resources>
         <!--  style for the cards  -->
         <Style x:Key="Cards" TargetType="StackPanel">
-            <Setter Property="Background" Value="Gray" />
+            <Setter Property="Background" Value="white" />
             <Setter Property="Width" Value="400" />
             <Setter Property="Height" Value="500" />
             <Setter Property="CornerRadius" Value="10" />
@@ -19,18 +19,27 @@
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="10" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="2" />
+            
+
+
+
         </Style>
 
         <!--  styles for the text block  -->
 
         <Style x:Key="Paragragh" TargetType="TextBlock">
             <Setter Property="Width" Value="200" />
-            <Setter Property="Height" Value="300" />
+            <Setter Property="Height" Value="200" />
             <Setter Property="TextWrapping" Value="Wrap" />
-            <Setter Property="Margin" Value="10" />
+            <Setter Property="Margin" Value="0,70,0,0" />
             <Setter Property="FontSize" Value="14" />
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="Black" />
+
 
 
 
@@ -44,127 +53,222 @@
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="10" />
-            <Setter Property="Background" Value="LightGreen" />
+            <Setter Property="Background" Value="#3338A0" />
             <Setter Property="FontSize" Value="16" />
             <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="BorderBrush" Value="DarkGreen" />
+            <Setter Property="BorderBrush" Value="White" />
             <Setter Property="BorderThickness" Value="2" />
             <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+
         </Style>
 
     </Page.Resources>
 
-    <Grid Background="DimGray">
+    <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="200*"/>
-            <RowDefinition Height="0*"/>
+            <RowDefinition />
+            <RowDefinition Height="200*" />
+            <RowDefinition Height="0*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0*" />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <ScrollViewer
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"
+            VerticalScrollBarVisibility="Auto">
 
 
-            <StackPanel>
+            <StackPanel 
+                
+                >
                 <StackPanel>
-                    <Image
-                    Height="500"
-                    Source="/Assets/landnew.jpeg"
-                    Stretch="Fill" />
-                    <TextBlock Text="Get rid of the hustle of waiting in line"
-                               FontSize="30"
-                               VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
-                               FontStretch="Expanded"
-                               FontWeight="Bold"
-                               />
+
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="30"
+                        FontStretch="Expanded"
+                        FontWeight="Bold"
+                        Foreground="#3338A0"
+                        Text="Get rid of the hustle of waiting in line" />
 
 
                 </StackPanel>
 
 
                 <StackPanel
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Orientation="Horizontal">
+                   
+                    Height="950"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
                     <StackPanel Style="{StaticResource Cards}">
-                        <TextBlock Text="Verifying Documents" 
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   Foreground="Green"
-                                   FontSize="20"
-                                   />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Foreground="#3338A0"
+                            Text="Verifying Documents" />
                         <TextBlock Style="{StaticResource Paragragh}" Text="Easily confirm land authenticity by scanning                                 a QR code or barcode linked to verified records.                                  Instantly check ownership details, location data,                                  and legitimacy to avoid fraud or fake documents" />
-                        <Button Content="See more" Style="{StaticResource Buttons}" Click="verifybtn" />
+                        <Button
+                            Click="verifybtn"
+                            Content="See more"
+                            Style="{StaticResource Buttons}" />
                     </StackPanel>
 
                     <StackPanel Style="{StaticResource Cards}">
-                        <TextBlock Text="Looking For Land" 
-                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                     Foreground="Green"
-                                     FontSize="20"
-                                   />
-                        <TextBlock Text="Search and explore available plots based on your preferences — location, size, or price.                                  Our system connects you to verified listings so you can find                                  genuine land opportunities fast." 
-                                   Style="{StaticResource Paragragh}" 
-                                   />
-                        <Button Content="See more"
-                                Style="{StaticResource Buttons}" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Foreground="#3338A0"
+                            Text="Looking For Land" />
+                        <TextBlock Style="{StaticResource Paragragh}" Text="Search and explore available plots based on your preferences — location, size, or price.                                  Our system connects you to verified listings so you can find                                  genuine land opportunities fast." />
+                        <Button
+                            Click="SearchLandBtn"
+                            Content="See more"
+                            Style="{StaticResource Buttons}" />
                     </StackPanel>
 
 
                     <StackPanel Style="{StaticResource Cards}">
-                        <TextBlock Text="Transfer of titles" 
-                                    VerticalAlignment="Center"
-                                     HorizontalAlignment="Center"
-                                     Foreground="Green"
-                                     FontSize="20"
-                                   />
-                        <TextBlock 
-                            Text="Simplify the transfer of land ownership through a secure digital process.                                   We handle verification, document validation,                                  and owner updates — making land transfers smooth, transparent, and traceable." 
-                            Style="{StaticResource Paragragh}" 
-                            />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Foreground="#3338A0"
+                            Text="Transfer of titles" />
+                        <TextBlock Style="{StaticResource Paragragh}" Text="Simplify the transfer of land ownership through a secure digital process.                                   We handle verification, document validation,                                  and owner updates — making land transfers smooth, transparent, and traceable." />
 
-                        <Button Content="See more" Style="{StaticResource Buttons}" />
+                        <Button
+                            Click="TransferLandBtn"
+                            Content="See more"
+                            Style="{StaticResource Buttons}" />
                     </StackPanel>
 
                 </StackPanel>
 
 
-                <StackPanel
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Orientation="Horizontal">
-                    <Image Source="/Assets/lawyer.jpeg"
-                           Stretch="Fill"
-                           Height="300"
-                           />
+                <Grid
+                    Height="900"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center">
 
-                    <StackPanel>
-                        <TextBlock Text="Secure Your Land with Confidence"
-                                    VerticalAlignment="Center"
-                                      HorizontalAlignment="Center"
-                                      Foreground="Green"
-                                      FontSize="30"
-                                   />
-                        <TextBlock Style="{StaticResource Paragragh}" 
-                                   Text="Connect with verified property lawyers who specialize in land verification,                                 ownership transfer, and dispute resolution.                                Our network ensures you get trusted legal guidance for every step — from reviewing documents to finalizing contracts.                                ✅ What You Can Do: Get matched with licensed land lawyers near you Request document review or legal advice Schedule                                 consultations directly through the platform We make sure you’re backed by professionals who understand land law —                                so every deal is secure, compliant, and fully transparent." />
+                    <!--  Background Image  -->
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/lawyer.jpeg" Stretch="UniformToFill" />
+                    </Grid.Background>
 
-                        <Button Content="See more" Style="{StaticResource Buttons}" />
+                    <!--  Dark overlay for better text readability  -->
+                    <Rectangle Fill="Black" Opacity="0.6" />
+
+                    <!--  Content on top  -->
+                    <StackPanel
+                        MaxWidth="800"
+                        Padding="40"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+
+                        <TextBlock
+                            Margin="0,0,0,20"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="30"
+                            FontStretch="Expanded"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Text="Secure Your Land with Confidence"
+                            TextAlignment="Center" />
+
+                        <TextBlock
+                            Margin="0,0,0,20"
+                            FontSize="16"
+                            Foreground="White"
+                            Text="Connect with verified property lawyers who specifications"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap" />
+
+                        <Button
+                            HorizontalAlignment="Center"
+                            Content="See more"
+                            Style="{StaticResource Buttons}" />
                     </StackPanel>
-
-                </StackPanel>
+                </Grid>
 
 
                 <!--  footer  -->
                 <StackPanel
-                Margin="0,20,0,20"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Bottom">
+                    Height="600"
+                    Margin="0,20,0,20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Orientation="Vertical">
+                    <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+                        <TextBlock
+                            Margin="0,0,5,0"
+                            FontSize="36"
+                            FontWeight="Bold"
+                            Foreground="DarkBlue"
+                            Text="Want to get in-touch " />
+
+
+                        <StackPanel
+                            Height="400"
+                            HorizontalAlignment="Stretch"
+                            Orientation="Horizontal">
+
+                            <StackPanel
+                                Width="300"
+                                Margin="20"
+                                VerticalAlignment="Center"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                Orientation="Vertical"
+                                Spacing="6">
+                                <TextBlock
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Text="Our Services:" />
+                                <TextBlock Text="• Land Verification" />
+                                <TextBlock Text="• Document Authentication" />
+                                <TextBlock Text="• Title Transfer" />
+                                <TextBlock Text="• Legal Support" />
+                            </StackPanel>
+
+                            <StackPanel
+                                Width="300"
+                                Margin="20"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Center"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                Orientation="Vertical"
+                                Spacing="6">
+                                <TextBlock
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Text="How It Works:" />
+                                <TextBlock FontWeight="Bold" Text="• Create an account" />
+                                <TextBlock FontWeight="Bold" Text="• Upload your documents" />
+                                <TextBlock FontWeight="Bold" Text="• Get verified results" />
+                                <TextBlock FontWeight="Bold" Text="• Complete your transaction" />
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel />
+
+
+                    </StackPanel>
+
                     <TextBlock Text="LandSecure © 2024. All rights reserved." />
 
                 </StackPanel>
