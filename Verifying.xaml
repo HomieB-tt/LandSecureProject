@@ -29,7 +29,12 @@
                 Text="Document Verification" />
 
             <!--  Progress Bar  -->
-            <StackPanel Grid.Row="1" Margin="0,0,0,30">
+            <StackPanel Grid.Row="1" Margin="0,0,0,30"
+                         BorderBrush="Black"
+                 BorderThickness="2"
+                 CornerRadius="5"
+                 Width="800"
+                        >
                 <TextBlock
                     x:Name="StepIndicator"
                     Margin="0,0,0,10"
@@ -45,7 +50,12 @@
             <Grid Grid.Row="2">
 
                 <!--  Step 1: Property Details  -->
-                <StackPanel x:Name="Step1Panel" Visibility="Visible">
+                <StackPanel x:Name="Step1Panel" Visibility="Visible"
+                            BorderBrush="Black"
+                            BorderThickness="2"
+                            CornerRadius="5"
+                            Width="800"
+                            >
                     <TextBlock
                         Margin="0,0,0,20"
                         FontSize="24"
