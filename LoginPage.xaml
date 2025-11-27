@@ -8,7 +8,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <Grid>
+    <Grid x:Name="BlurredPanel">
         <Grid.Background>
             <ImageBrush ImageSource="/Assets/landunsplash.jpg" Stretch="UniformToFill" />
         </Grid.Background>
