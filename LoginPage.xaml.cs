@@ -25,6 +25,21 @@ namespace LandSecure
         public LoginPage()
         {
             this.InitializeComponent();
+            
+        }
+        public void ApplyingABlur(){
+            var host = ElementCompositionPreview.GetElementVisual(BlurredPanel);
+            var compositor = host.Compositor;
+
+            var blurry = compositor.CreateGaussianBlurEffect();
+            blurry.BlurAmount = 20.0f;
+            blurry.BorderMode = Microsoft.Graphics.Canvas.Effects.EffectBorderMode.Hard;
+
+            var brusher = compositor.CreateEffectFactory(blurry).CreateBrush();
+            var sprite = compositor.CreateSpriteVisual();
+            sprite.Brush = brusher;
+
+            ElementCompositionPreview.SetElementChildVisual(BlurredPanel, sprite);
         }
     }
 }
